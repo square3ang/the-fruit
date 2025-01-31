@@ -1,0 +1,6 @@
+[submodule "layouts/thefruit-skin-liberty"]
+	path = layouts/thefruit-skin-liberty
+	url = https://github.com/square3ang/thefruit-skin-liberty
+[submodule "layouts/liberty"]
+	path = layouts/liberty
+	url = https://github.com/square3ang/thefruit-skin-liberty

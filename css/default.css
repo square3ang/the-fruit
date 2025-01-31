@@ -1,0 +1,85 @@
+.modal2 {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 600px;
+    position: relative;
+    padding: 1rem;
+    z-index: 10000;
+}
+
+.theseed-dark-mode .modal2 {
+    background-color: #2d2f34;
+    border-color: #2d3748
+}
+
+.headeraaa {
+    border: 1px solid #ccc;
+    height: 2.6rem;
+    margin-bottom: 1.2rem;
+    padding: .3rem
+}
+
+.sexycontainer {
+    padding: 1rem .5rem;
+}
+
+.sexyclosebutton {
+    background: 0 0;
+    border: 0;
+    color: #000;
+    cursor: pointer;
+    float: right;
+    font-size: 1.5rem !important;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0 0 0 .5rem;
+    opacity: .2;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    right: 0;
+    text-shadow: 0 1px 0 #fff;
+    text-transform: none;
+    top: 0;
+}
+
+.theseed-dark-mode .sexyclosebutton {
+    color: #fff
+}
+
+.sexyh1 {
+    color: inherit;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 .5rem;
+}
+
+.sexytab {
+    border-radius: 0;
+    color: #000;
+    cursor: pointer;
+    display: block;
+    float: left;
+    padding: .3rem .5rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none
+}
+
+.theseed-dark-mode .sexytab {
+    color: #ddd;
+}
+
+.sexysection {
+    min-height: 700px;
+}
+
+#selectedtab {
+    background-color: #ababab;
+    color: #fff
+}
