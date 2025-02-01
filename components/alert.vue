@@ -1,14 +1,16 @@
 <template>
     <div class="alert" :class="[
-        theme === 'primary' ? 'alert-primary' : 'alert-danger',
-        { 'alert-closable': closable },
-        { 'alert-error': error }
+        'alert-' + theme ?? 'primary',
+        { 'alert-closable': closable ?? false },
+        { 'alert-error': error ?? false }
     ]">
-        <slot></slot>
-        <!-- Optional close button -->
-        <button v-if="closable" type="button" class="close" @click="closeAlert">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        <div style="flex: 1;">
+            <slot></slot>
+            <!-- Optional close button -->
+            <button v-if="closable" type="button" class="close" @click="closeAlert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
     </div>
 </template>
 
@@ -18,7 +20,7 @@ export default {
     props: {
         theme: {
             type: String,
-            default: 'primary' // or 'danger', etc.
+            default: 'danger' // or 'danger', etc.
         },
         error: {
             type: Boolean,
@@ -40,31 +42,41 @@ export default {
 
 <style scoped>
 .alert {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #bbb;
-    border-radius: 4px;
-    position: relative;
+    /*background-color: #f3f3f3;
+    border: 1px solid #d5d5d5;*/
+    border-radius: .25rem;
+    -moz-column-gap: .75rem;
+    column-gap: .75rem;
+    display: flex;
+    margin-bottom: 1.5rem;
+    padding: .5rem .75rem
+}
+
+.theseed-dark-mode .alert {
+    background-color: #2a2a2a;
+    border-color: #484848
 }
 
 .alert-closable .close {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    cursor: pointer;
     background: none;
     border: none;
+    color: #212529;
+    color: var(--light-text-color, var(--text-color, #212529));
+    display: inline-block;
+    height: 1.15rem;
+    margin: .05rem 0 0;
+    opacity: .7;
+    width: 1.15rem
 }
 
-.alert-primary {
-    background-color: #cce5ff;
+.theseed-dark-mode .alert-closable .close {
+    color: #e0e0e0;
+    color: var(--dark-text-color, var(--text-color, #e0e0e0))
 }
 
-.alert-danger {
-    background-color: #f8d7da;
-}
-
-.alert-error {
-    border-color: #dc3545;
+.theseed-dark-mode .alert-error {
+    background-color: #3d050b;
+    border-color: #861520;
+    color: #eec0c0;
 }
 </style>

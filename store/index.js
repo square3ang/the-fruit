@@ -15,13 +15,11 @@ export default createStore({
             //'skin.liberty.navbar_logo_margin': '0px',
             //'skin.liberty.brand_color_2': '#2ecc71',
             //'skin.liberty.brand_bright_color_2': '#58d68d',
-            'wiki.sitenotice': '',
+            'wiki.sitenotice': '와샌즈모르시는구나혹시아시는분들을위해제가머리를타격해드립니다',
             'wiki.copyright_text': '© 2025 square3ang. All rights reserved.',
             'skin.liberty.footer_html': '<p>그냥푸터</p>',
         },
         localConfig: {
-            'liberty.fixed_navbar': true,
-            'liberty.sidebar': 'fix',
             'wiki.hide_user_document_discuss': false,
         },
         session: {
@@ -52,8 +50,8 @@ export default createStore({
                 },
                 //rev: 42,
                 date: '2025-01-31T12:00:00Z',
-                edit_acl_message: '',
-                editable: true,
+                edit_acl_message: '편집 권한이 부족합니다',
+                editable: false,
             },
             viewName: 'wiki',
             title: '정사각위키',
@@ -63,11 +61,11 @@ export default createStore({
     getters: {},
     mutations: {
         localConfigSetValue (state, obj) {
-            switch (obj.key) {
-                case "wiki.theme":
-                    state.currentTheme = obj.value;
-                    break;
+            if (obj.key == "wiki.theme") {
+                state.currentTheme = obj.value;
+                return;
             }
+            state.localConfig[obj.key] = obj.value;
         },
         changeViewName(state, viewName) {
             //console.log('changeViewName:', viewName);

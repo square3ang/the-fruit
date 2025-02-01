@@ -6,7 +6,7 @@ export default {
     },
     methods: {
         reset() {
-            // wtf is this method??
+            document.getElementById('searchInput').value = '';
         }
     }
 }

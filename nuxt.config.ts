@@ -5,11 +5,7 @@ import vitePluginString from 'vite-plugin-string'
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  components: [
-    {
-      path: "~/skins",
-    }
-  ],
+  components: true,
   plugins: [
     '~/plugins/storeSupport.js',
     '~/plugins/compat-v2.js',
@@ -28,10 +24,5 @@ export default defineNuxtConfig({
         }
       }
     ]
-  },
-  routeRules: {
-    "/": {
-      redirect: "/w/%EC%A0%95%EC%82%AC%EA%B0%81%EC%9C%84%ED%82%A4:%EB%8C%80%EB%AC%B8",
-    },
   }
 })

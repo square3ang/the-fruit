@@ -1,3 +1,6 @@
+@import url('https://theseed.io/css/wiki.css');
+@import url('https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css');
+
 .modal2 {
     background: #fff;
     border: 1px solid #e2e8f0;
@@ -82,4 +85,16 @@
 #selectedtab {
     background-color: #ababab;
     color: #fff
+}
+
+.wiki-article .wiki-link-external:before {
+    background: green;
+    color: #fff;
+    content: "";
+    font-family: "Ionicons" !important;
+    padding: 0 .15em
+}
+
+.wiki-article .wiki-list {
+    padding-left: .5rem;
 }
